@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CarreaderTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="save_options">Mentési opciók.</string>
+    <string name="sync_header">Sync</string>
+    <string name="pref_title_notifications">Title megjegyzés</string>
+    <string name="notifications_new_message">Új üzenet jelzése.</string>
+    <string name="title_new_notification_sound">Új üzenet jelzőhang.</string>
+    <string name="key_vibrate">Kulcs vibrálása.</string>
+    <string name="summary_vibrate">Összegzés vibrálása.</string>
+    <string name="title_vibrate">Title vibrálása.</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
