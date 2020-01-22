@@ -5,5 +5,14 @@
     <FrameLayout
         android:id="@+id/settings"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_directory"
+            android:text="@string/dir_button_text"
+            android:onClick="selectdirectory" />
+    </FrameLayout>
 </LinearLayout>

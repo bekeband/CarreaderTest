@@ -14,8 +14,9 @@
     <string name="title_vibrate">Title vibrálása.</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="signature_title">Cél.</string>
+    <string name="reply_title">Gyakoriság.</string>
+    <string name="dir_button_text">Kiválaszt.</string>
 
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
