@@ -1,5 +1,6 @@
 package com.example.carreadertest
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
@@ -7,6 +8,11 @@ import android.view.View
 import android.util.Log
 import java.io.File
 import android.content.Intent
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -40,24 +46,45 @@ class SettingsActivity : AppCompatActivity() {
         val fileName = "data.txt"
         if (requestCode == 9999) {
 
+            val newdir = getDir("@string/program_dir_name", Context.MODE_APPEND)
+            Log.i("Test", "Getting the newdir : " + newdir)
+
+            val resFile = File(newdir, "output.txt")
+            Log.i("Test", "Create file: " + resFile.toString())
+            if (resFile.createNewFile() == true)
+            {
+                Log.i("Test", "Succesfully created: " + resFile.toString())
+            } else {
+                Log.i("Test", "Create failed: " + resFile.toString())
+            }
+
             val uri = data!!.getData()
             Log.i("Test", "RAW URI " + uri)
             val pathName = uri!!.getPath()
             Log.i("Test", "PathName " + pathName)
-  //          val v = pathName + '/' + fileName
-            val v = "test.txt"
-            Log.i("Test", "Get total filename " + v)
 
-            val file = File(v)
 
-             // create a new file
-                val isNewFileCreated: Boolean = file.createNewFile()
+            var file = File(fileName)
 
-                if (isNewFileCreated) {
-                    println("$fileName is created successfully.")
-                } else {
-                    println("$fileName already exists.")
-                }
+            // create a new file
+            val isNewFileCreated :Boolean = file.createNewFile()
+
+            if(isNewFileCreated){
+                println("$fileName is created successfully.")
+            } else{
+                println("$fileName already exists.")
+            }
+
+            // try creating a file that already exists
+            val isFileCreated :Boolean = file.createNewFile()
+
+            if(isFileCreated){
+                println("$fileName is created successfully.")
+            } else{
+                println("$fileName already exists.")
+            }
+
+
 
         }
         when (requestCode) {
